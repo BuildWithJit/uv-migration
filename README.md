@@ -21,8 +21,10 @@ If you're currently using a `.venv` and `requirements.txt`, follow these steps:
 # Step 1: Activate your existing virtual environment
 source ./.venv/bin/activate
 
-# Step 2: Export your current dependencies
-pip freeze > requirements.txt 
+# 2. Extract only the top-level dependencies
+pip install pipreqs
+pipreqs . --force
+
 
 # Step 3: Deactivate and remove the old venv
 deactivate
